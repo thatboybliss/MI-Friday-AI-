@@ -1,0 +1,11 @@
+{
+  "name": "friday-ai-v2",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
+    "setup": "bash scripts/setup.sh"
+  },
+  "packageManager": "pnpm@8.15.0"
+}

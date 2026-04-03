@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: friday-frontend
+    env: static
+    buildCommand: pnpm install && pnpm run build
+    publishPath: apps/web/out
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          type: web
+          name: friday-api
+          property: host
+
+  - type: web
+    name: friday-api
+    env: python
+    buildCommand: pip install -r apps/api/requirements.txt
+    startCommand: uvicorn apps.api.app.main:app --host 0.0.0.0 --port $PORT
