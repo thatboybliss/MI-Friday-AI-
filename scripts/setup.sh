@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "🛡️ Running Friday AI Onboarding..."
+echo "🛡️ Refracting Environment..."
 pnpm install --silent
-cp config/.env.example .env 2>/dev/null || touch .env
-echo "✅ Environment Refracted."
+[ -f "config/.env.example" ] && cp config/.env.example .env || touch .env
+echo "✅ Setup Complete."
